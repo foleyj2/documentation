@@ -8,6 +8,11 @@ Once an image is created on an SD card, by inserting it into a card reader on a 
 
 You will need to define a `wpa_supplicant.conf` file for your particular wireless network. Put this file in the boot folder, and when the Pi first boots, it will copy that file into the correct location in the Linux root file system and use those settings to start up wireless networking.
 
+For some distributions, it is important to define which country that WiFi is being used on to ensure compliance with local laws.  Make sure this is at the top of the file or raspi-config will be unable to communicate with the wpa-supplicant service.  For example:
+```
+country=US
+```
+
 More information on the `wpa_supplicant.conf` file can be found [here](wireless-cli.md).
 
 ## Enabling SSH
